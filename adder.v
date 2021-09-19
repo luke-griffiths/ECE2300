@@ -85,57 +85,5 @@ module adder(A, B, CI, Y, C, V); // add all inputs and outputs inside parenthese
 	C=COUT[7];
 	V=COUT[7]^COUT[6];
 	end
-	
-	
- /**
-  always@(*) begin
-	G[0]=A[0] & B[0];
-	P[0]=A[0]|B[0];
-	// C[0] is the carry out from the [0] position
-	COUT[0]=G[0]|P[0]&CI;
-	
-	G[1]=A[1] & B[1];
-	P[1]=A[1]|B[1];
-	COUT[1]=G[1]|P[1]&COUT[0];
-	
-	G[2]=A[2] & B[2];
-	P[2]=A[2]|B[2];
-	COUT[2]=G[2]|P[2]&COUT[1];
-	
-	G[3]=A[3] & B[3];
-	P[3]=A[3]|B[3];
-	COUT[3]=G[3]|P[3]&COUT[2];
-	
-	G[4]=A[4] & B[4];
-	P[4]=A[4]|B[4];
-	COUT[4]=G[4]|P[4]&COUT[3];
-	
-	G[5]=A[5] & B[5];
-	P[5]=A[5]|B[5];	
-	COUT[5]=G[5]|P[5]&COUT[4];
-
-	G[6]=A[6] & B[6];
-	P[6]=A[6]|B[6];
-	COUT[6]=G[6]|P[6]&COUT[5];
-
-	G[7]=A[7] & B[7];
-	P[7]=A[7]|B[7];
-	COUT[7]=G[7]|P[7]&COUT[6];
-
-	C=COUT[7];
-	
-	V=COUT[7]^COUT[6];
-	
-	Y[0]=A[0]^B[0]^CI;
-	Y[1]=A[1]^B[1]^COUT[0];
-	Y[2]=A[2]^B[2]^COUT[1];	
-	Y[3]=A[3]^B[3]^COUT[2];	
-	Y[4]=A[4]^B[4]^COUT[3];	
-	Y[5]=A[5]^B[5]^COUT[4];
-	Y[6]=A[6]^B[6]^COUT[5];	
-	Y[7]=A[7]^B[7]^COUT[6];	
-  
-  end
-  **/
 
 endmodule
