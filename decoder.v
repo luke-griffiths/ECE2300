@@ -36,11 +36,11 @@ wire [2:0] FUNCT;
 wire [5:0] IMM_INST;
 
 assign OP = INST[15:12];
-assign RS = INST[11:9];/* ADD BY YOURSELF */
-assign RT = INST[8:6];/* ADD BY YOURSELF */
-assign RD = INST[5:3];/* ADD BY YOURSELF */
-assign FUNCT = INST[2:0];/* ADD BY YOURSELF */
-assign IMM_INST = INST[5:0];/* ADD BY YOURSELF */
+assign RS = INST[11:9];
+assign RT = INST[8:6];
+assign RD = INST[5:3];
+assign FUNCT = INST[2:0];
+assign IMM_INST = INST[5:0];
 
 always @(*) begin
 	case (OP)
@@ -90,7 +90,7 @@ always @(*) begin
 			IMM = IMM_INST;
 		end
 
-		4'b0100: begin				//SB
+		4'b0100: begin	
 			DR = 3'b0;
 			SA = RS;
 			SB = RT;
@@ -107,7 +107,7 @@ always @(*) begin
 			
 		end
 
-		4'b0101: begin				//ADDI : done by course staff, not me 
+		4'b0101: begin	
 			DR = RT;
 			SA = RS;
 			SB = 3'b0;
@@ -135,7 +135,7 @@ always @(*) begin
 			OFF = 6'b0;
 			HALT = 1'b0;
 			IMM = IMM_INST;
-			/* IMPLEMENT BY YOURSELF */
+			
 		end
 
 		4'b0111: begin
@@ -152,9 +152,9 @@ always @(*) begin
 			HALT = 1'b0;
 			IMM = IMM_INST;
 
-			/* IMPLEMENT BY YOURSELF */
+			
 		end
-		4'b1000: begin			//Change this now
+		4'b1000: begin			
 			DR = 3'b0;
 			SA = RS;
 			SB = RT;
@@ -169,7 +169,7 @@ always @(*) begin
 			IMM = 6'b0;
 		end 
 		
-		4'b1001: begin			//Change this now
+		4'b1001: begin			
 			DR = 3'b0;
 			SA = RS;
 			SB = RT;
@@ -184,7 +184,7 @@ always @(*) begin
 			IMM = 6'b0;
 		end 
 		
-		4'b1010: begin			//Change this now
+		4'b1010: begin			
 			DR = 3'b0;
 			SA = RS;
 			SB = 3'b0;
@@ -199,7 +199,7 @@ always @(*) begin
 			IMM = 6'b0;
 		end 
 		
-		4'b1011: begin			//Change this now
+		4'b1011: begin			
 			DR = 3'b0;
 			SA = RS;
 			SB = 3'b0;
@@ -229,7 +229,7 @@ always @(*) begin
 			HALT = 1'b0;
 			IMM = 6'bx;
 
-			/* IMPLEMENT BY YOURSELF */
+			
 		end
 
 		default: begin
